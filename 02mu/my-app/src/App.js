@@ -1,10 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import NameCard from './components/NameCard';
 
 function App() {
   return (
     <div className="App">
+      <NameCard name="kangting" number={1234567890} ishuman tags={['善良','大方']}/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>hahaha</h1>

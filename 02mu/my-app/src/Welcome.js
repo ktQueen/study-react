@@ -5,6 +5,8 @@ class Welcome extends React.Component{
     render(){
         const todoList=['learn react','learn redux'];
         const islogin=false;
+        const test=<p>123</p>
+        console.log(test);
     return <div>
             <h1 className='ddd' htmlFor="">
                 hello React12
@@ -14,8 +16,8 @@ class Welcome extends React.Component{
             </h1>
             <ul>
                 {
-                    todoList.map(item=>
-                        <li>{item}</li>
+                    todoList.map((item,index)=>
+                        <li key={index}>{item}</li>
                     )
                 }
             </ul>

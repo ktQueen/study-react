@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+// 默认的组件
 import App from './App';
+// 第一个组件
 import Welcome from './Welcome';
+// 实例
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
