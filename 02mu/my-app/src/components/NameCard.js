@@ -3,7 +3,7 @@ import React from 'react';
 const NameCard=(props)=>{
     const {name,number,ishuman,tags}=props;
     return (
-        <div>
+        <div className="alert alert-success">
             <p>姓名：{name}</p>
             <p>电话号码：{number}</p>
             <p>{ishuman?'人类':'外星人'}</p>

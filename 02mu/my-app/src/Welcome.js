@@ -9,8 +9,8 @@ class Welcome extends React.Component{
         console.log(test);
     return <div>
             <h1 className='ddd' htmlFor="">
-                hello React12
-                {'123'}
+                hello React
+                <p>{'123'}</p>
                 <p>{1+2}</p>
                 <p>{[4,5,6]}</p>
             </h1>
