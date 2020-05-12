@@ -4,10 +4,12 @@ import './App.css';
 import NameCard from './components/NameCard';
 import LikesButton from './components/LikesButton';
 import DigitalClock from './components/DigitalClock';
+import CommentBox from './components/CommentBox';
 
 function App() {
   return (
     <div className="App">
+      <CommentBox />
       <DigitalClock />
       <LikesButton />
       <NameCard name="kangting" number={1234567890} ishuman tags={['善良','大方']}/>

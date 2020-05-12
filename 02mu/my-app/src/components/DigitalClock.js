@@ -16,8 +16,8 @@ class DigitalClock extends React.Component{
         },1000)
     }
     //更新
-    componentDidUpdate(currentProps,currentState){
-        console.log(currentProps,currentState);
+    componentDidUpdate(prevProps,prevState){
+        // console.log(prevProps,prevState);
     }
     // 卸载
     componentWillUnmount(){
