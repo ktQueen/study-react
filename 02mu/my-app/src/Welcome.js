@@ -9,7 +9,8 @@ class Welcome extends React.Component{
         console.log(test);
     return <div>
             <h1 className='ddd' htmlFor="">
-                hello React
+                这是第一个React组件,JSX
+                <p>hello React</p>
                 <p>{'123'}</p>
                 <p>{1+2}</p>
                 <p>{[4,5,6]}</p>
