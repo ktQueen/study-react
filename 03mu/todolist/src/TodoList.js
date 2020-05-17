@@ -1,10 +1,10 @@
-import React from 'react';
+import React,{Component,Fragment} from 'react';
 import TodoItem from './TodoItem'
 
 // 通过属性的形式向子组件传递参数
 // 通过props接受父组件传递过来的参数
 //定义一个React组件
-class TodoList extends React.Component{
+class TodoList extends Component{
   constructor(props){
     super(props)
     this.state={
@@ -47,13 +47,15 @@ class TodoList extends React.Component{
   render(){
     // jsx语法
     return (
-      <div>
+      <Fragment>
         <div>
           <input value={this.state.inputValue} onChange={this.handleInputChange}/>
-          <button onClick={this.handleBtnClick}>add</button>
+          <button style={{color:"red"}} 
+                  className='btn'
+                  onClick={this.handleBtnClick}>add</button>
         </div>
         <ul>{this.getTodoItem()}</ul>
-      </div>
+      </Fragment>
     );
   }
 }
