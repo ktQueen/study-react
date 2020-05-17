@@ -11,6 +11,10 @@ class TodoList extends React.Component{
       list:[],
       inputValue:''
     }
+    // 性能考虑
+    this.handleInputChange=this.handleInputChange.bind(this)
+    this.handleBtnClick=this.handleBtnClick.bind(this)
+    this.handleDelete=this.handleDelete.bind(this)
   }
   handleBtnClick(){
     this.setState({
@@ -23,13 +27,6 @@ class TodoList extends React.Component{
       inputValue:e.target.value
     })
   }
-  handleClickItem(index){
-    const list=[...this.state.list]
-    list.splice(index,1)
-    this.setState({
-      list
-    })
-  }
   handleDelete(index){
     const list=[...this.state.list]
     list.splice(index,1)
@@ -37,22 +34,25 @@ class TodoList extends React.Component{
       list
     })
   }
+  getTodoItem(){
+    return  this.state.list.map((item,index)=>{
+      return <TodoItem 
+              delete={this.handleDelete} 
+              key={index} 
+              item={item} 
+              index={index}>
+              </TodoItem>
+    })
+  }
   render(){
     // jsx语法
     return (
       <div>
         <div>
-          <input value={this.state.inputValue} onChange={this.handleInputChange.bind(this)}/>
-          <button onClick={this.handleBtnClick.bind(this)}>add</button>
+          <input value={this.state.inputValue} onChange={this.handleInputChange}/>
+          <button onClick={this.handleBtnClick}>add</button>
         </div>
-        <ul>
-          {
-            this.state.list.map((item,index)=>{
-              return <TodoItem delete={this.handleDelete.bind(this)} key={index} item={item} index={index}></TodoItem>
-              // return  <li key={index}>{item}<span onClick={this.handleClickItem.bind(this,index)}>删除</span></li>
-            })
-          }
-        </ul>
+        <ul>{this.getTodoItem()}</ul>
       </div>
     );
   }
