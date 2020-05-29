@@ -1,0 +1,35 @@
+.orderItem {
+    display: flex;
+    padding: 11px 10px 11px 15px;
+    border: 1px solid #eee;
+    box-shadow: 0px 0px 10px 5px #eee;
+}
+
+.orderItem__picContainer {
+    padding-right: 10px;
+}
+
+.orderItem__pic {
+    width: 90px;
+    height: 90px;
+}
+
+.orderItem__content{
+    flex: 1;
+}
+.orderItem__product{
+    margin-bottom: 4px;
+}
+.orderItem__shop{
+    margin-bottom: 4px;
+}
+.orderItem__detail {
+    display: flex;
+    justify-content: space-between
+}
+.orderItem__btn--gray{
+    
+}
+.orderItem__btn--red{
+    background-color: red;
+}
