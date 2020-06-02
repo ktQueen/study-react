@@ -8,6 +8,7 @@ class OrderList extends Component {
         this.state={
             data:[]
         }
+        this.handleSubmit=this.handleSubmit.bind(this)
     }
     componentDidMount(){
         // html5的fetch属性
@@ -21,12 +22,23 @@ class OrderList extends Component {
             }
         })
     }
+    handleSubmit(id,comment,star){
+        // fetch('/saveComment').then(()=>{})
+        const newData=this.state.data.map((item)=>{
+            return item.id===id?{
+                ...item,comment,star,ifCommented:true
+            }:item
+        })
+        this.setState({
+            data:newData
+        })
+    }
     render() {
         return (
             <div className="orderList">
                 {
                     this.state.data.map((item)=>{
-                        return <OrderItem key={item.id} data={item}/>
+                        return <OrderItem key={item.id} data={item} onSubmit={this.handleSubmit}/>
                     })
                 }
             </div>
